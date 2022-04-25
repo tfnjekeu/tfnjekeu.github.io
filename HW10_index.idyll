@@ -1,0 +1,69 @@
+[meta title:"IS445 Spring 2022" description:"First post" /]
+
+[Header
+  fullWidth:true
+  title:"HOMEWORK #10
+  Option 3:CAR Dataset"
+  subtitle:"Welcome to HOMEWORK #10 page"
+  author:"Terence Njekeu"
+  authorLink:"https://www.linkedin.com/in/terence-f-njekeu/"
+  date:`(new Date()).toDateString()`
+  background:"#222222"
+  color:"#ffff00"
+   /]
+## Introduction
+The data I am using presents information about used cars and can be used for a lot of purposes such as price prediction. I got it from Kaggle.com
+
+
+
+## Data
+First, I’m just going to load the data and show a table of it like we did in class:
+[data name:"carTime" source:"Car_Detail.csv" /]
+
+### Table with our data
+
+[Table data:carTime /]
+
+## Visualization
+[Chart type:"bar" data:`carTime` domain:`null` range:`null` x:"Year" y:"Fuel_Type" /]
+
+
+#Interactions
+
+##1
+
+Select a transmission type
+[var name:"x" value:"one" /]
+
+[Switch value:x]
+  [Case test:"one"]Case 1[/Case]
+  [Case test:"two"]Case 2[/Case]
+[/Switch]
+
+[Button onClick:`x = "one"`]Automatic[/Button]
+[Button onClick:`x = "two"`]Manual[/Button]
+
+
+
+         ##2
+Slide to modify years:
+[var name:"Year" value:0 /]
+[Range value:y min:2003 max:2018  /]
+Year = [Display value:y /].
+
+
+        ##3
+[var name:"myVar" value:0 /]
+
+[button onClick:`myVar += 1`]Click Me![/button]to learn the numbers of owners of the car you chose: [Display value:myVar /]
+
+[Dynamic value:myVar /]
+
+        ##4
+
+If you need further assistance
+ [action onClick:`alert('clicked the text')`]click me[/action],
+an a representative will come to assist you.
+
+#Conclusion
+It is important to first note that making an interactivity was not easy because Vega lite was very fuzzy on my computer. However, I chose this dataset because gas prices have increased a lot nowadays and the interactivity has for purpose helping people to buy cars smartly so that they can save money on gas. For instance, the 1st interaction invites the user to select a transmission by selecting a radio button. The 2nd is to modify a year by using a range slider, the 3rd is to click on the numbers if owners using Dynamic values, the 4th one used Action to activate a warning. 
